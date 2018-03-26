@@ -9,10 +9,17 @@
 <body>
 <h1>Просмотр</h1>
 
-<section id="content"></section>
+<div id="content"></div>
 
-<script src="../scripts/templates.js"></script>
 <script src="../scripts/view.js"></script>
-
+<button id="edit" type="button" onclick="editOn()"> Edit </button>
+<script>
+    function editOn() {
+        let inputs = document.getElementsByTagName('input');
+        for (i in inputs){
+            inputs[i].disabled = false;
+        }
+    }
+</script>
 </body>
 </html>

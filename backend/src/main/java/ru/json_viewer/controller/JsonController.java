@@ -12,6 +12,7 @@ import java.io.IOException;
 import static ru.json_viewer.web.Url.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping(path = JSON_URL)
 @Slf4j
 public class JsonController {

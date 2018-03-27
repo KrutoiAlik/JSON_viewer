@@ -1,30 +1,354 @@
 <!DOCTYPE html>
+<!-- Template by Quackit.com -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Редактирование</title>
-    <link rel="stylesheet" href="../styles/styles.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>JSON Edit</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    <link href="../styles/custom.css" rel="stylesheet">
+
 </head>
+
 <body>
-<h1>Редактирование</h1><br>
 
-<div>
-    <form>
-        <label for="fname" >First Name</label>
-        <input type="text" id="fname" name="firstname" disabled placeholder="Your name..">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#">Edit JSON</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
 
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+<div class="container">
 
-        <label for="country">Country</label>
-        <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-        </select>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">JSON
+                <small>Edit</small>
+            </h1>
+        </div>
+    </div>
 
-        <input type="submit" value="Submit">
-    </form>
+    <div class="row">
+        <div id='version-row' class="col-md-6 portfolio-item" style="width:100%">
+            <label for="version"></label>
+            <input style="width: 10%; float: right; padding: 3px"
+                   id="version" type="number"
+                   disabled> <label
+            style="float: right; padding-right: 5px">ver.</label>
+            <button id="versionButton" type="button">Edit</button>
+        </div>
+        <div class="col-md-6 portfolio-item" style="width:100%">
+            <h4><a>Databases</a></h4>
+            <table style="width: 100%">
+                <tr>
+                    <th>Mid</th>
+                    <th>Host</th>
+                    <th>Type</th>
+                    <th>Version</th>
+                    <th>Config</th>
+                </tr>
+                <tr>
+                    <td>Mid</td>
+                    <td>Host</td>
+                    <td>Type</td>
+                    <td>Version</td>
+                    <td>
+                        <table style="width:80%">
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="text" disabled>
+                                    </label>
+                                    <label
+                                        style="float: right; padding-right: 5px">User:
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="password" disabled>
+                                    </label>
+                                    <label
+                                        style="float: right; padding-right: 5px">Password:
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="text" disabled>
+                                    </label>
+                                    <label
+                                        style="float: right; padding-right: 5px">Charset:
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="number" disabled>
+                                    </label>
+                                    <label
+                                        style="float: right; padding-right: 5px">Timeout:
+                                    </label></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <button style="float: right" id="databasesButton" type="button">Edit</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 portfolio-item">
+            <h4>
+                <a>Authorization</a>
+            </h4>
+            <table>
+                <tr>
+                    <th>Mid:</th>
+                    <td>
+                        <label>
+                            <input class="authorizationInput" type="text" disabled/>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Host:</th>
+                    <td>
+                        <label>
+                            <input class="authorizationInput" type="text" disabled/>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Config:</th>
+                    <td>
+                        <label>
+                            <input class="authorizationInput" type="text" disabled/>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6 portfolio-item">
+            <h4>
+                <a>Dictionary</a>
+            </h4>
+            <table>
+                <tr>
+                    <th>Mid:</th>
+                    <td>
+                        <label>
+                            <input class="dictionaryInput" type="text" disabled/>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Host:</th>
+                    <td>
+                        <label>
+                            <input class="dictionaryInput" type="text" disabled/>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <button style="float: right" id="auth-dictionary" type="button">Edit</button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 portfolio-item" style="width: 100%">
+            <h4>
+                <a>Transaction</a>
+            </h4>
+            <table>
+                <tr>
+                    <th>Mid:</th>
+                    <td>
+                        <label>
+                            <input class="transactionInput" type="text" disabled/>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Host:</th>
+                    <td>
+                        <label>
+                            <input class="transactionInput" type="text" disabled/>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+
+            <h5>Databases</h5>
+            <table>
+                <tr>
+                    <th>Mid</th>
+                    <th>Host</th>
+                    <th>Type</th>
+                    <th>Version</th>
+                    <th>Config</th>
+                </tr>
+                <tr>
+                    <td>Mid</td>
+                    <td>Host</td>
+                    <td>Type</td>
+                    <td>Version</td>
+                    <td>
+                        <table style="width:80%">
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="text" disabled>User
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="password" disabled><label
+                                    style="float: right; padding-right: 5px">Password: </label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" disabled><label
+                                    style="float: right; padding-right: 5px">Charset: </label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="number" disabled><label
+                                    style="float: right; padding-right: 5px">Timeout: </label></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <button style="float: right" id="transactionButton" type="button">Edit</button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 portfolio-item">
+            <h4>
+                <a>Event</a>
+            </h4>
+            <table>
+                <tr>
+                    <th>Mid:</th>
+                    <td><input class="eventInput" type="text" disabled/></td>
+                </tr>
+                <tr>
+                    <th>Host:</th>
+                    <td><input class="eventInput" type="text" disabled/></td>
+                </tr>
+            </table>
+
+            <h4>
+                <a>Address</a>
+            </h4>
+            <table>
+                <tr>
+                    <th>Host:</th>
+                    <td><input class="addressInput" type="text" disabled/></td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="col-md-6 portfolio-item">
+            <h4>
+                <a>Monitor</a>
+            </h4>
+            <table>
+                <tr>
+                    <th>Mid:</th>
+                    <td><input class="authorization" type="text" disabled/></td>
+                </tr>
+                <tr>
+                    <th>Host:</th>
+                    <td><input class="authorization" type="text" disabled/></td>
+                </tr>
+            </table>
+
+            <h4>
+                <a>Tariff</a>
+            </h4>
+            <table>
+                <tr>
+                    <th>Host:</th>
+                    <td><input class="authorization" type="text" disabled/></td>
+                </tr>
+            </table>
+        </div>
+
+        <button style="float: right" id="address-event-tariff-monitor" type="button">Edit</button>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6 portfolio-item" style="width: 100%">
+            <h4>
+                <a>Terminals</a>
+            </h4>
+            <table>
+                <tr>
+                    <th>Post:</th>
+                    <td><input class="terminals" type="number" disabled/></td>
+                </tr>
+                <tr>
+                    <th>Kgp:</th>
+                    <td><input class="terminals" type="text" disabled/></td>
+                </tr>
+                <tr>
+                    <th>GUI version:</th>
+                    <td><input class="terminals" type="text" disabled/></td>
+                </tr>
+                <tr>
+                    <th>Windows:</th>
+                    <td><input class="terminals" type="text" disabled/></td>
+                </tr>
+                <tr>
+                    <th>Services:</th>
+                    <td><input class="terminals" type="text" disabled/></td>
+                </tr>
+            </table>
+        </div>
+
+        <button style="float: right" id="terminalsButton" type="button">Edit</button>
+    </div>
+
 </div>
+
+
+<!-- jQuery -->
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+
+<script src="../scripts/edit.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../scripts/bootstrap.min.js"></script>
+
 </body>
+
 </html>

@@ -1,0 +1,100 @@
+body {
+    padding-top: 50px; /* Padding for .navbar-fixed-top. Change value if navbar height changes. Remove if using .navbar-static-top. */
+}
+
+.portfolio-item {
+    margin-bottom: 25px;
+}
+
+.footer-blurb {
+    padding: 30px 0;
+	text-align: center;
+    background-color: lightskyblue;
+}
+
+.footer-blurb h4 {
+    color: midnightblue;
+    }
+    
+.footer-blurb-item {
+    padding: 30px 0;
+    }
+ 
+.copyright {
+	background-color: #fff;
+	text-align: center;
+	padding: 30px 0;
+}
+
+input{
+    margin-left: 0em;
+    float: right;
+    width: 40em;
+    border: 1px solid #ccc;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 0.3em;
+}
+
+th {
+    padding: 5px;
+    text-align: center;
+}
+td {
+    padding: 5px;
+    text-align: left;
+}
+
+input[class=authorization]{
+    margin-left: 0em;
+    float: right;
+    width: 20em;
+    border: 1px solid #ccc;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.9em;
+    padding: 0.3em;
+}
+
+
+button {
+    background-color: #046380;
+    color: #FFF;
+    border: none;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 2px 2px 0 #034154;
+    margin-bottom: 10px;
+    margin-left: 18px;
+    transition: opacity .4s ease-out, transform .4s ease-out, visibility .4s ease-out;
+    position: relative;
+    top: -10px;
+}
+
+button:hover {
+    background-color: #034F66;
+}
+
+button:active {
+    background-color: #034154;
+    box-shadow: none;
+    position: relative;
+    top: -8px;
+    left: 2px;
+}
+
+p {
+    padding: 4px 0 2px 8px;
+    line-height: 1.7;
+    border-bottom: 1px dotted #DDD;
+    list-style: none;
+    margin: 0;
+}
+
+.hide-me {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(.75);
+}

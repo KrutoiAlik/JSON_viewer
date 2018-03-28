@@ -49,11 +49,9 @@
 <div class="container-fluid">
     <div class="container-fluid">
 
-        <div class="col-sm-8">
-            <div class="well">
-                <h4 id="databases-h4">Databases</h4>
-            </div>
-            <div class="row">
+        <div class="col-sm-12">
+            <h2 id="databases-h4">Databases</h2><br/>
+            <div class="row" style="float: top">
                 <div class="col-sm-10">
                     <div class="well">
                         <div class="input-group input-group-lg">
@@ -117,28 +115,34 @@
                                         <h4 class="modal-title" id="myModalLabel">Configuration</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="input-group input-group-lg"
-                                             style="padding-left: 50px; padding-right: 50px">
-                                            <table class="table text-left">
+                                        <table class="table-hover"
+                                               style="border-radius: 5px;
+                                                   width: 50%;
+                                                   margin: 0px auto;
+                                                   float: none;">
+                                            <div class="input-group input-group-lg">
                                                 <tbody>
-                                                <tr>
-                                                    <td><input class="form-control input-sm" type="text"/></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><p>User<input class="form-control input-sm" type="url"/></p>
-                                                    </td>
-                                                </tr>
                                                 <tr>
                                                     <td><p>User<input class="form-control input-sm" type="text"/></p>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><p>User<input class="form-control input-sm" type="number"/></p>
+                                                    <td><p>Password<input class="form-control input-sm"
+                                                                          type="password"/></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>Charset<input class="form-control input-sm" type="text"/></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>Timeout<input class="form-control input-sm" type="number"/>
+                                                    </p>
                                                     </td>
                                                 </tr>
                                                 </tbody>
-                                            </table>
-                                        </div>
+                                            </div>
+                                        </table>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close
@@ -154,7 +158,7 @@
         </div>
     </div>
 </div>
-<script src="index.js"></script>
+<script src="../scripts/index.js"></script>
 
 </body>
 </html>

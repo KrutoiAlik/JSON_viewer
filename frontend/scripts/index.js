@@ -230,15 +230,14 @@ function readJSON(data) {
 }
 
 function setHeaders(data) {
-    let logo = document.getElementById('pills-tab')
+    let logo = document.getElementById('nav-tab')
     for (header in data) {
-        logo.innerHTML +=
-            '<li class="nav-item">' +
-            '<a class="nav-link" id="' + header
-            + '-tab" data-toggle="pill" href="#' + header
-            + '-profile" role="tab" aria-controls="pills-home" aria-selected="true">' + header[0].toUpperCase()
-            + header.substring(1) +
-            '</a>' +
-            '</li>'
+
+        logo.innerHTML += '<a class="nav-item nav-link" id="' + header + '-tab" data-toggle="tab" href="#' + header + '-profile" role="tab" aria-controls="nav-home" aria-selected="true">' + header[0].toUpperCase() + header.substring(1) + '</a>'
     }
 }
+
+$('#pills-tab a').on('click', function (e) {
+    e.preventDefault();
+    $(this).tab('show')
+});

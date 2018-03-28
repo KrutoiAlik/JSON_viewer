@@ -218,7 +218,9 @@ let ourData = {
 };
 console.log(ourData);
 readJSON(JSON.parse(JSON.stringify(ourData)));
-setHeaders(JSON.parse(JSON.stringify(ourData)));
+document.addEventListener('DOMContentLoaded', function () {
+    setHeaders(JSON.parse(JSON.stringify(ourData)));
+});
 
 function readJSON(data) {
 
@@ -228,18 +230,15 @@ function readJSON(data) {
 }
 
 function setHeaders(data) {
-    let logo = document.getElementById('ulNavBar')
+    let logo = document.getElementById('pills-tab')
     for (header in data) {
         logo.innerHTML +=
             '<li class="nav-item">' +
-            '<a class="nav-link" ' +
-            'id="' + header + '-tab" ' +
-            'data-toggle="pill" ' +
-            'href="#' + header + '-profile" ' +
-            'role="tab" ' +
-            'aria-controls="pills-profile" ' +
-            'aria-selected="false">' + header[0].toUpperCase() + header.substring(1) +
+            '<a class="nav-link" id="' + header
+            + '-tab" data-toggle="pill" href="#' + header
+            + '-profile" role="tab" aria-controls="pills-home" aria-selected="true">' + header[0].toUpperCase()
+            + header.substring(1) +
             '</a>' +
-            '</li>';
+            '</li>'
     }
 }

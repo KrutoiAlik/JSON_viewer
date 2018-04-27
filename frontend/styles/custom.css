@@ -98,3 +98,13 @@ p {
     opacity: 0;
     transform: scale(.75);
 }
+
+.bg {
+    /* The image used */
+    /* Half height */
+    height: 50%;
+
+    /* Center and scale the image nicely */
+    background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg") no-repeat center;
+    background-size: cover;
+}

@@ -5,10 +5,18 @@
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
     <script src="../scripts/index.js"></script>
     <style type="text/css">
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -23,675 +31,694 @@
             }
         }
 
-        .form-control {
-            width: auto;
+        @media (min-width: 768px) {
+            .container {
+                width: 720px;
+                max-width: 100%;
+            }
         }
+
+        .form-control {
+            width: available;
+        }
+
+        .jumbotron {
+            width: fit-content;
+            margin: auto;
+            background-color: white;
+        }
+
+        .container {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        h2 {
+             text-align: justify;
+         }
 
         body, html {
-            height: 100%;
+            background: #edeef6;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            direction: ltr;
+            font-size: 13px;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;line-height: 1.154;
+            font-weight: 400;
+            -webkit-font-smoothing: subpixel-antialiased;
         }
 
-        .bg {
-            /* The image used */
-            background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
-
-            /* Half height */
-            height: inherit;
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .custom-centered{
-            margin:0 auto;
-            width:300px;
-        }
     </style>
 </head>
 <body>
-<div class="bg">
-    <nav class="sidenav">
-        <div class="nav nav-tabs" id="nav-tab" role="tablist"></div>
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+            <h4 class="text-white">Collapsed content</h4>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">JSON Viewer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav mr-left mt-0 mt-lg-0" id="nav-tab"></ul>
+        </div>
     </nav>
-
-    <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="version-profile" role="tabpanel"
-             aria-labelledby="pills-home-tab">
-                <div class="col-lg-1" style="margin: 0 auto">
-                    <form role="form" class="custom-centered" >
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" name= "Email" class="form-control" id="email"
-                                   placeholder="Enter Email..">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="Password" class="form-control" id="password"
-                                   placeholder="Enter Password">
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
-                </div>
-        </div>
-        <div class="tab-pane fade" id="databases-profile" role="tabpanel"
-             aria-labelledby="pills-home-tab">
-            <div class="container-fluid">
-
-                <div class="col-sm-10" style="margin: 10px auto;">
-                    <br/>
-                    <h2 id="databases-h4">Databases</h2><br/>
-                    <div class="row">
-                        <div class="col-">
-                            <div class="well">
-                                <div class="input-group input-group-lg">
-                                    <table class="table">
-                                        <thead>
-                                        <tr style="float: top">
-                                            <th>Mid</th>
-                                            <th>Host</th>
-                                            <th>Type</th>
-                                            <th>Version</th>
-                                            <th>Config</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>
-                                                <input class="form-control input-sm" type="text"/>
-                                            </td>
-                                            <td>
-                                                <input class="form-control input-sm" type="url"/>
-                                            </td>
-                                            <td>
-                                                <input class="form-control input-sm" type="text"/>
-                                            </td>
-                                            <td>
-                                                <input class="form-control input-sm" type="number"/>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary"
-                                                        data-toggle="modal"
-                                                        data-target="#config-model">
-                                                    Config
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+</div>
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="version-profile" role="tabpanel" aria-labelledby="pills-home-tab">
+        <br/>
+        <div class="jumbotron border">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" style="margin: 0 auto; background-color: white">
+                        <form role="form" class="custom-centered">
+                            <div class="form-group">
+                                <label for="version">Version</label>
+                                <input type="number" name="Version" class="form-control" id="version">
                             </div>
-                        </div>
+                            <button type="button" class="btn btn-primary">Edit</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="autorization-profile" role="tabpanel"
-             aria-labelledby="pills-home-tab">
-            <div class="col-sm-4" style="margin: 0 auto;">
-                <br/>
-                <h2 id="autorization-h4">Authorization</h2><br/>
-                <div class="input-group input-group-sm">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputMid">Email address</label>
-                            <input type="text" class="form-control" id="exampleInputMid" placeholder="Enter mid">
-                        </div>
-                        <div class="form-group">
-                            <label for="form-host">Password</label>
-                            <input type="url" class="form-control" id="form-host" placeholder="Enter host">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
+    </div>
+    <div class="tab-pane fade" id="databases-profile" role="tabpanel"
+         aria-labelledby="pills-home-tab">
+        <br/>
+        <div class="jumbotron" style="width: 80%">
+            <h1 class="display-4" id="databases-h4">Databases</h1><br/>
+            <table class="table table-bordered" style="width: fit-content">
+                <thead>
+                <tr>
+                    <th scope="col">Mid</th>
+                    <th scope="col">Host</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Version</th>
+                    <th scope="col">Config</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <input class="form-control input-sm" type="text" disabled/>
+                    </td>
+                    <td>
+                        <input class="form-control input-sm" type="url" disabled/>
+                    </td>
+                    <td>
+                        <input class="form-control input-sm" type="text" disabled/>
+                    </td>
+                    <td>
+                        <input class="form-control input-sm" type="number" disabled/>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary"
+                                data-toggle="modal"
+                                data-target="#config-model">
+                            Config
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="tab-pane fade" id="transaction-profile" role="tabpanel"
-             aria-labelledby="pills-home-tab">
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-lg-2 input-group input-group-sm">
-                        <br/>
-                        <h2>Transaction</h2>
-                        <table class="table">
-                            <tr>
-                                <td>Mid: <input class="form-control input-sm" type="text"/></td>
-                                <td>Host: <input class="form-control input-sm" type="url"/></td>
-                            </tr>
-                        </table>
-                        <h5>Databases</h5>
-                        <table class="table">
-                            <thead>
-                            <tr style="float: top">
-                                <th>Mid</th>
-                                <th>Host</th>
-                                <th>Type</th>
-                                <th>Version</th>
-                                <th>Config</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="url"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="number"/>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-primary"
-                                            data-toggle="modal"
-                                            data-target="#config-model">
-                                        Config
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="url"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="number"/>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-primary"
-                                            data-toggle="modal"
-                                            data-target="#config-model">
-                                        Config
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="url"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="number"/>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-primary"
-                                            data-toggle="modal"
-                                            data-target="#config-model">
-                                        Config
-                                    </button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <h5>Service</h5>
-                        <table class="table">
-                            <tr>
-                                <td>X Report: <input class="form-control input-sm" type="number"/></td>
-                                <td>Open day: <input class="form-control input-sm" type="number"/></td>
-                                <td>Close day: <input class="form-control input-sm" type="number"/></td>
-                                <td>Sum: <input class="form-control input-sm" type="number"/></td>
-                            </tr>
-                        </table>
-                        <h5>Config</h5>
-                        <table class="table">
-                            <tr>
-                                <td>Check header: <input class="form-control input-sm" type="text"/></td>
-                                <td>Check footer: <input class="form-control input-sm" type="text"/></td>
-                            </tr>
-                        </table>
+    </div>
+    <div class="tab-pane fade" id="autorization-profile" role="tabpanel"
+         aria-labelledby="pills-home-tab">
+        <div class="col-sm-4" style="margin: 0 auto;">
+            <br/>
+            <div class="jumbotron border" style="width: 60%">
+                <h2 id="autorization-h4" style="margin: 0 auto; alignment: top">Authorization</h2><br/>
+                <div class="container">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputMid">Email address</label>
+                                <input type="text" class="form-control" id="exampleInputMid" placeholder="Enter mid">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-host">Password</label>
+                                <input type="url" class="form-control" id="form-host" placeholder="Enter host">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="dictionary-profile" role="tabpanel"
-             aria-labelledby="pills-home-tab">
-            <div class="col-sm-12">
-                <br/>
-                <h2>Dictionary</h2><br/>
-                <div class="row">
-                    <div class="col-lg-2 input-group input-group-sm">
-                        <br/>
-                        <table class="table">
-                            <tr>
-                                <td>Mid: <input class="form-control input-sm" type="text"/></td>
-                                <td>Host: <input class="form-control input-sm" type="url"/></td>
-                            </tr>
-                        </table>
-                        <h5>Config</h5>
-                        <table class="table">
-                            <tr>
-                                <td>Path data: <input class="form-control input-sm" type="text"/></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="transport-profile" role="tabpanel"
-             aria-labelledby="pills-home-tab">
-            <div class="col-sm-12">
-                <br/>
-                <h2 id="transport-h4">Transport</h2><br/>
-                <div class="row">
-                    <div class="col-lg-2 input-group input-group-sm">
-                        <br/>
-                        <table class="table">
-                            <tr>
-                                <td>Mid: <input class="form-control input-sm" type="text"/></td>
-                                <td>Host: <input class="form-control input-sm" type="url"/></td>
-                            </tr>
-                        </table>
-                        <h5>Databases</h5>
-                        <table class="table">
-                            <thead>
-                            <tr style="float: top">
-                                <th>Mid</th>
-                                <th>Base</th>
-                                <th>User</th>
-                                <th>Password</th>
-                                <th>No create</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="url"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="password"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="number"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="url"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="password"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="number"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="url"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="text"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="password"/>
-                                </td>
-                                <td>
-                                    <input class="form-control input-sm" type="number"/>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <h5>Config</h5>
-                        <table class="table">
-                            <table class="table">
-                                <h6>FTP:</h6>
-                                <tr>
-                                    <td>Host: <input class="form-control input-sm" type="url"/></td>
-                                    <td>Login: <input class="form-control input-sm" type="text"/></td>
-                                    <td>Password: <input class="form-control input-sm" type="password"/></td>
-                                    <td>Path: <input class="form-control input-sm" type="url"/></td>
-                                </tr>
-                            </table>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="event-profile" role="tabpanel"
-             aria-labelledby="pills-home-tab">
-            <div class="col-sm-4">
-                <br/>
-                <h2>Event</h2>
-                <div class="input-group input-group-sm">
+    </div>
+    <div class="tab-pane fade" id="transaction-profile" role="tabpanel"
+         aria-labelledby="pills-home-tab">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-lg-2 input-group input-group-sm">
+                    <br/>
+                    <h2>Transaction</h2>
                     <table class="table">
                         <tr>
                             <td>Mid: <input class="form-control input-sm" type="text"/></td>
                             <td>Host: <input class="form-control input-sm" type="url"/></td>
                         </tr>
                     </table>
-                </div>
-                <br/>
-                <h2>Monitor</h2><br/>
-                <div class="input-group input-group-sm">
+                    <h5>Databases</h5>
+                    <table class="table">
+                        <thead>
+                        <tr style="float: top">
+                            <th>Mid</th>
+                            <th>Host</th>
+                            <th>Type</th>
+                            <th>Version</th>
+                            <th>Config</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="url"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="number"/>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-primary"
+                                        data-toggle="modal"
+                                        data-target="#config-model">
+                                    Config
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="url"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="number"/>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-primary"
+                                        data-toggle="modal"
+                                        data-target="#config-model">
+                                    Config
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="url"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="number"/>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-primary"
+                                        data-toggle="modal"
+                                        data-target="#config-model">
+                                    Config
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h5>Service</h5>
                     <table class="table">
                         <tr>
-                            <td>Mid: <input class="form-control input-sm" type="text"/></td>
-                            <td>Host: <input class="form-control input-sm" type="url"/></td>
+                            <td>X Report: <input class="form-control input-sm" type="number"/></td>
+                            <td>Open day: <input class="form-control input-sm" type="number"/></td>
+                            <td>Close day: <input class="form-control input-sm" type="number"/></td>
+                            <td>Sum: <input class="form-control input-sm" type="number"/></td>
                         </tr>
                     </table>
-                </div>
-                <br/>
-                <h2>Tariff</h2><br/>
-                <div class="input-group input-group-sm">
+                    <h5>Config</h5>
                     <table class="table">
                         <tr>
-                            <td>Host: <input class="form-control input-sm" type="url"/></td>
-                        </tr>
-                    </table>
-                </div>
-                <br/>
-                <h2>Address</h2><br/>
-                <div class="input-group input-group-sm">
-                    <table class="table">
-                        <tr>
-                            <td>Host: <input class="form-control input-sm" type="url"/></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="terminals-profile" role="tabpanel"
-             aria-labelledby="pills-home-tab">
-            <div class="col-sm-4">
-                <br/>
-                <h2>Terminals</h2>
-                <table class="table">
-                    <tr>
-                        <td>Post: <input class="form-control input-sm" type="text"/></td>
-                        <td>GUI Version: <input class="form-control input-sm" type="url"/></td>
-                    </tr>
-                </table>
-                <div class="input-group input-group-sm">
-                    <table class="table">
-                        <h6>KGP:</h6>
-                        <tr>
-                            <td><input class="form-control input-sm" type="text"/></td>
-                            <td><input class="form-control input-sm" type="url"/></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="input-group input-group-sm">
-                    <table class="table">
-                        <h6>Windows:</h6>
-                        <tr>
-                            <td>Win</td>
-                            <td>Name</td>
-                            <td>Fiskal</td>
-                            <td>Card</td>
-                            <td>Printer</td>
-                            <td>Barcode</td>
-                            <td>Weight</td>
-                        </tr>
-                        <tr>
-                            <td><input class="form-control input-sm" type="number"/></td>
-                            <td><input class="form-control input-sm" type="text"/></td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#mid-host-db-config-model">
-                                    View
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#mid-host-db-config-model">
-                                    View
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#mid-host-db-config-model">
-                                    View
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#mid-host-db-config-model">
-                                    View
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#mid-host-db-config-model">
-                                    View
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="input-group input-group-sm">
-                    <table class="table">
-                        <h6>Services:</h6>
-                        <tr>
-                            <td>Min</td>
-                            <td>Host</td>
-                            <td>Databases</td>
-                            <td>Service</td>
-                            <td>Config</td>
-                        </tr>
-                        <tr>
-                            <td><input class="form-control input-sm" type="number"/></td>
-                            <td><input class="form-control input-sm" type="text"/></td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#databases-model">
-                                    View
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#mid-host-db-config-model">
-                                    View
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#mid-host-db-config-model">
-                                    View
-                                </button>
-                            </td>
+                            <td>Check header: <input class="form-control input-sm" type="text"/></td>
+                            <td>Check footer: <input class="form-control input-sm" type="text"/></td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-
-    <!--Modals-->
-    <div class="modal fade" id="config-model" tabindex="-1"
-         role="dialog"
-         aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Configuration</h4>
-                    <button type="button" class="close"
-                            data-dismiss="modal"
-                            aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
+    <div class="tab-pane fade" id="dictionary-profile" role="tabpanel"
+         aria-labelledby="pills-home-tab">
+        <div class="col-sm-12">
+            <br/>
+            <h2>Dictionary</h2><br/>
+            <div class="row">
+                <div class="col-lg-2 input-group input-group-sm">
+                    <br/>
+                    <table class="table">
+                        <tr>
+                            <td>Mid: <input class="form-control input-sm" type="text"/></td>
+                            <td>Host: <input class="form-control input-sm" type="url"/></td>
+                        </tr>
+                    </table>
+                    <h5>Config</h5>
+                    <table class="table">
+                        <tr>
+                            <td>Path data: <input class="form-control input-sm" type="text"/></td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="modal-body">
-                    <table class="table-hover"
-                           style="border-radius: 5px;
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="transport-profile" role="tabpanel"
+         aria-labelledby="pills-home-tab">
+        <div class="col-sm-12">
+            <br/>
+            <h2 id="transport-h4">Transport</h2><br/>
+            <div class="row">
+                <div class="col-lg-2 input-group input-group-sm">
+                    <br/>
+                    <table class="table">
+                        <tr>
+                            <td>Mid: <input class="form-control input-sm" type="text"/></td>
+                            <td>Host: <input class="form-control input-sm" type="url"/></td>
+                        </tr>
+                    </table>
+                    <h5>Databases</h5>
+                    <table class="table">
+                        <thead>
+                        <tr style="float: top">
+                            <th>Mid</th>
+                            <th>Base</th>
+                            <th>User</th>
+                            <th>Password</th>
+                            <th>No create</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="url"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="password"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="number"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="url"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="password"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="number"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="url"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="text"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="password"/>
+                            </td>
+                            <td>
+                                <input class="form-control input-sm" type="number"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h5>Config</h5>
+                    <table class="table">
+                        <table class="table">
+                            <h6>FTP:</h6>
+                            <tr>
+                                <td>Host: <input class="form-control input-sm" type="url"/></td>
+                                <td>Login: <input class="form-control input-sm" type="text"/></td>
+                                <td>Password: <input class="form-control input-sm" type="password"/></td>
+                                <td>Path: <input class="form-control input-sm" type="url"/></td>
+                            </tr>
+                        </table>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="event-profile" role="tabpanel"
+         aria-labelledby="pills-home-tab">
+        <div class="col-sm-4">
+            <br/>
+            <h2>Event</h2>
+            <div class="input-group input-group-sm">
+                <table class="table">
+                    <tr>
+                        <td>Mid: <input class="form-control input-sm" type="text"/></td>
+                        <td>Host: <input class="form-control input-sm" type="url"/></td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <h2>Monitor</h2><br/>
+            <div class="input-group input-group-sm">
+                <table class="table">
+                    <tr>
+                        <td>Mid: <input class="form-control input-sm" type="text"/></td>
+                        <td>Host: <input class="form-control input-sm" type="url"/></td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <h2>Tariff</h2><br/>
+            <div class="input-group input-group-sm">
+                <table class="table">
+                    <tr>
+                        <td>Host: <input class="form-control input-sm" type="url"/></td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <h2>Address</h2><br/>
+            <div class="input-group input-group-sm">
+                <table class="table">
+                    <tr>
+                        <td>Host: <input class="form-control input-sm" type="url"/></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="terminals-profile" role="tabpanel"
+         aria-labelledby="pills-home-tab">
+        <div class="col-sm-4">
+            <br/>
+            <h2>Terminals</h2>
+            <table class="table">
+                <tr>
+                    <td>Post: <input class="form-control input-sm" type="text"/></td>
+                    <td>GUI Version: <input class="form-control input-sm" type="url"/></td>
+                </tr>
+            </table>
+            <div class="input-group input-group-sm">
+                <table class="table">
+                    <h6>KGP:</h6>
+                    <tr>
+                        <td><input class="form-control input-sm" type="text"/></td>
+                        <td><input class="form-control input-sm" type="url"/></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-group input-group-sm">
+                <table class="table">
+                    <h6>Windows:</h6>
+                    <tr>
+                        <td>Win</td>
+                        <td>Name</td>
+                        <td>Fiskal</td>
+                        <td>Card</td>
+                        <td>Printer</td>
+                        <td>Barcode</td>
+                        <td>Weight</td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-control input-sm" type="number"/></td>
+                        <td><input class="form-control input-sm" type="text"/></td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#mid-host-db-config-model">
+                                View
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#mid-host-db-config-model">
+                                View
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#mid-host-db-config-model">
+                                View
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#mid-host-db-config-model">
+                                View
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#mid-host-db-config-model">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-group input-group-sm">
+                <table class="table">
+                    <h6>Services:</h6>
+                    <tr>
+                        <td>Min</td>
+                        <td>Host</td>
+                        <td>Databases</td>
+                        <td>Service</td>
+                        <td>Config</td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-control input-sm" type="number"/></td>
+                        <td><input class="form-control input-sm" type="text"/></td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#databases-model">
+                                View
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#mid-host-db-config-model">
+                                View
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#mid-host-db-config-model">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modals-->
+<div class="modal fade" id="config-model" tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Configuration</h4>
+                <button type="button" class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <table class="table-hover"
+                       style="border-radius: 5px;
                                                    width: 50%;
                                                    margin: 0px auto;
                                                    float: none;">
-                        <div class="input-group input-group-btn">
-                            <tbody>
-                            <tr>
-                                <td><p>User<input
-                                        class="form-control input-sm"
-                                        type="text"/></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><p>Password<input
-                                        class="form-control input-sm"
-                                        type="password"/></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><p>Charset<input
-                                        class="form-control input-sm"
-                                        type="text"/></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><p>Timeout<input
-                                        class="form-control input-sm"
-                                        type="number"/>
-                                </p>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </div>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default"
-                            data-dismiss="modal">Close
-                    </button>
-                    <button type="button" class="btn btn-primary">Save
-                        changes
-                    </button>
-                </div>
+                    <div class="input-group input-group-btn">
+                        <tbody>
+                        <tr>
+                            <td><p>User<input
+                                    class="form-control input-sm"
+                                    type="text"/></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Password<input
+                                    class="form-control input-sm"
+                                    type="password"/></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Charset<input
+                                    class="form-control input-sm"
+                                    type="text"/></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Timeout<input
+                                    class="form-control input-sm"
+                                    type="number"/>
+                            </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </div>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">Close
+                </button>
+                <button type="button" class="btn btn-primary">Save
+                    changes
+                </button>
             </div>
         </div>
     </div>
-    <div class="modal fade bd-example-modal-lg" id="databases-model" tabindex="-1" role="dialog"
-         aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Configuration</h4>
-                    <button type="button" class="close"
-                            data-dismiss="modal"
-                            aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <table class="table-hover"
-                           style="border-radius: 5px;
+</div>
+<div class="modal fade bd-example-modal-lg" id="databases-model" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Configuration</h4>
+                <button type="button" class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <table class="table-hover"
+                       style="border-radius: 5px;
                        width: 50%;
                        margin: 0px auto;
                        float: none;">
-                        <div class="input-group input-group-btn">
-                            <tbody>
-                            <tr>
-                                <td><p>Mid<input class="form-control input-sm" type="text"/></p></td>
-                                <td><p>Base<input class="form-control input-sm" type="text"/></p></td>
-                                <td><p>User<input class="form-control input-sm" type="text"/></p></td>
-                                <td><p>Password<input class="form-control input-sm" type="password"/></p></td>
-                            </tr>
-                            </tbody>
-                        </div>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default"
-                            data-dismiss="modal">Close
-                    </button>
-                    <button type="button" class="btn btn-primary">Save
-                        changes
-                    </button>
-                </div>
+                    <div class="input-group input-group-btn">
+                        <tbody>
+                        <tr>
+                            <td><p>Mid<input class="form-control input-sm" type="text"/></p></td>
+                            <td><p>Base<input class="form-control input-sm" type="text"/></p></td>
+                            <td><p>User<input class="form-control input-sm" type="text"/></p></td>
+                            <td><p>Password<input class="form-control input-sm" type="password"/></p></td>
+                        </tr>
+                        </tbody>
+                    </div>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">Close
+                </button>
+                <button type="button" class="btn btn-primary">Save
+                    changes
+                </button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="mid-host-db-config-model" tabindex="-1"
-         role="dialog"
-         aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Profile</h4>
-                    <button type="button" class="close"
-                            data-dismiss="modal"
-                            aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <table
-                            style="border-radius: 5px;
+</div>
+<div class="modal fade" id="mid-host-db-config-model" tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Profile</h4>
+                <button type="button" class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <table
+                        style="border-radius: 5px;
                                                    width: 50%;
                                                    margin: 0px auto;
                                                    float: none;">
-                        <div class="input-group input-group-btn">
-                            <tbody>
-                            <tr>
-                                <td><p>Mid<input
-                                        class="form-control input-sm"
-                                        type="text"/></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><p>Host<input
-                                        class="form-control input-sm"
-                                        type="url"/></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><p>Config<input
-                                        class="form-control input-sm"
-                                        type="text"/></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><p>Databases<input
-                                        class="form-control input-sm"
-                                        type="text"/>
-                                </p>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </div>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default"
-                            data-dismiss="modal">Close
-                    </button>
-                    <button type="button" class="btn btn-primary">Save
-                        changes
-                    </button>
-                </div>
+                    <div class="input-group input-group-btn">
+                        <tbody>
+                        <tr>
+                            <td><p>Mid<input
+                                    class="form-control input-sm"
+                                    type="text"/></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Host<input
+                                    class="form-control input-sm"
+                                    type="url"/></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Config<input
+                                    class="form-control input-sm"
+                                    type="text"/></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Databases<input
+                                    class="form-control input-sm"
+                                    type="text"/>
+                            </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </div>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">Close
+                </button>
+                <button type="button" class="btn btn-primary">Save
+                    changes
+                </button>
             </div>
         </div>
     </div>

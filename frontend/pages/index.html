@@ -56,10 +56,6 @@
             padding-left: 15px;
         }
 
-        h2 {
-             text-align: justify;
-         }
-
         body, html {
             background: #edeef6;
             color: #000;
@@ -67,7 +63,8 @@
             padding: 0;
             direction: ltr;
             font-size: 13px;
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;line-height: 1.154;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.154;
             font-weight: 400;
             -webkit-font-smoothing: subpixel-antialiased;
         }
@@ -160,129 +157,127 @@
             <div class="jumbotron border" style="width: 60%">
                 <h2 id="autorization-h4" style="margin: 0 auto; alignment: top">Authorization</h2><br/>
                 <div class="container">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputMid">Email address</label>
-                                <input type="text" class="form-control" id="exampleInputMid" placeholder="Enter mid">
-                            </div>
-                            <div class="form-group">
-                                <label for="form-host">Password</label>
-                                <input type="url" class="form-control" id="form-host" placeholder="Enter host">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form
-                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputMid">Email address</label>
+                            <input type="text" class="form-control" id="exampleInputMid" placeholder="Enter mid">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-host">Password</label>
+                            <input type="url" class="form-control" id="form-host" placeholder="Enter host">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     <div class="tab-pane fade" id="transaction-profile" role="tabpanel"
          aria-labelledby="pills-home-tab">
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-lg-2 input-group input-group-sm">
-                    <br/>
-                    <h2>Transaction</h2>
-                    <table class="table">
-                        <tr>
-                            <td>Mid: <input class="form-control input-sm" type="text"/></td>
-                            <td>Host: <input class="form-control input-sm" type="url"/></td>
-                        </tr>
-                    </table>
-                    <h5>Databases</h5>
-                    <table class="table">
-                        <thead>
-                        <tr style="float: top">
-                            <th>Mid</th>
-                            <th>Host</th>
-                            <th>Type</th>
-                            <th>Version</th>
-                            <th>Config</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <input class="form-control input-sm" type="text"/>
-                            </td>
-                            <td>
-                                <input class="form-control input-sm" type="url"/>
-                            </td>
-                            <td>
-                                <input class="form-control input-sm" type="text"/>
-                            </td>
-                            <td>
-                                <input class="form-control input-sm" type="number"/>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#config-model">
-                                    Config
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input class="form-control input-sm" type="text"/>
-                            </td>
-                            <td>
-                                <input class="form-control input-sm" type="url"/>
-                            </td>
-                            <td>
-                                <input class="form-control input-sm" type="text"/>
-                            </td>
-                            <td>
-                                <input class="form-control input-sm" type="number"/>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#config-model">
-                                    Config
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input class="form-control input-sm" type="text"/>
-                            </td>
-                            <td>
-                                <input class="form-control input-sm" type="url"/>
-                            </td>
-                            <td>
-                                <input class="form-control input-sm" type="text"/>
-                            </td>
-                            <td>
-                                <input class="form-control input-sm" type="number"/>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="modal"
-                                        data-target="#config-model">
-                                    Config
-                                </button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <h5>Service</h5>
-                    <table class="table">
-                        <tr>
-                            <td>X Report: <input class="form-control input-sm" type="number"/></td>
-                            <td>Open day: <input class="form-control input-sm" type="number"/></td>
-                            <td>Close day: <input class="form-control input-sm" type="number"/></td>
-                            <td>Sum: <input class="form-control input-sm" type="number"/></td>
-                        </tr>
-                    </table>
-                    <h5>Config</h5>
-                    <table class="table">
-                        <tr>
-                            <td>Check header: <input class="form-control input-sm" type="text"/></td>
-                            <td>Check footer: <input class="form-control input-sm" type="text"/></td>
-                        </tr>
-                    </table>
-                </div>
+        <br/>
+        <div class="jumbotron">
+            <div class="col-sm-8" style="margin: 0 auto;">
+                <br/>
+                <h2>Transaction</h2>
+                <table class="table">
+                    <tr>
+                        <td>Mid: <input class="form-control input-sm" type="text"/></td>
+                        <td>Host: <input class="form-control input-sm" type="url"/></td>
+                    </tr>
+                </table>
+                <h5>Databases</h5>
+                <table class="table">
+                    <thead>
+                    <tr style="float: top">
+                        <th>Mid</th>
+                        <th>Host</th>
+                        <th>Type</th>
+                        <th>Version</th>
+                        <th>Config</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input class="form-control input-sm" type="text"/>
+                        </td>
+                        <td>
+                            <input class="form-control input-sm" type="url"/>
+                        </td>
+                        <td>
+                            <input class="form-control input-sm" type="text"/>
+                        </td>
+                        <td>
+                            <input class="form-control input-sm" type="number"/>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#config-model">
+                                Config
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="form-control input-sm" type="text"/>
+                        </td>
+                        <td>
+                            <input class="form-control input-sm" type="url"/>
+                        </td>
+                        <td>
+                            <input class="form-control input-sm" type="text"/>
+                        </td>
+                        <td>
+                            <input class="form-control input-sm" type="number"/>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#config-model">
+                                Config
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="form-control input-sm" type="text"/>
+                        </td>
+                        <td>
+                            <input class="form-control input-sm" type="url"/>
+                        </td>
+                        <td>
+                            <input class="form-control input-sm" type="text"/>
+                        </td>
+                        <td>
+                            <input class="form-control input-sm" type="number"/>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#config-model">
+                                Config
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h5>Service</h5>
+                <table class="table">
+                    <tr>
+                        <td>X Report: <input class="form-control input-sm" type="number"/></td>
+                        <td>Open day: <input class="form-control input-sm" type="number"/></td>
+                        <td>Close day: <input class="form-control input-sm" type="number"/></td>
+                        <td>Sum: <input class="form-control input-sm" type="number"/></td>
+                    </tr>
+                </table>
+                <h5>Config</h5>
+                <table class="table">
+                    <tr>
+                        <td>Check header: <input class="form-control input-sm" type="text"/></td>
+                        <td>Check footer: <input class="form-control input-sm" type="text"/></td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
@@ -575,8 +570,8 @@
                         aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
             </div>
-            <div class="modal-body">
-                <table class="table-hover"
+            <div class="modal-body row">
+                <form  role="form" class="custom-centered"
                        style="border-radius: 5px;
                                                    width: 50%;
                                                    margin: 0px auto;
@@ -610,7 +605,7 @@
                         </tr>
                         </tbody>
                     </div>
-                </table>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default"

@@ -230,11 +230,10 @@ function readJSON(data) {
     for (let obj in data) {
         let size = Object.keys(data[obj]).length;
         let obj_tab = document.getElementById(obj + "-profile");
-        console.log(obj + " " + data[obj]);
-        if (size !== 1) {
-            for (let field in data[obj]) {
-
-            }
+        if (obj === 'databases' || obj === 'terminals'){
+            createTable(obj + '-profile', data[obj]);
+        } else {
+            createForm(obj + '-profile', data[obj]);
         }
     }
 }
@@ -248,9 +247,10 @@ function setHeaders(data) {
 }
 
 function createTable(header, data) {
-    let obj = document.getElementById(header + '-jumbotron');
+    let head = header + "-jumbotron";
+    let obj = document.getElementById(head);
 
-    obj.innerHTML += '<thead><tr>';
+    obj.innerHTML += '<table class="table"><thead><tr>';
     for (let element in data) {
         obj.innerHTML += '<th scope="col">' + element + '</th>';
     }
@@ -264,20 +264,24 @@ function createTable(header, data) {
         }
         obj.innerHTML += '<td scope="col">' + data[element] + '</td>';
     }
-    obj.innerHTML += '</tr></tbody>';
+    obj.innerHTML += '</tr></tbody></table>';
 }
 
 function createForm(header, data) {
     let obj = document.getElementById(header + '-container');
-
-    obj.innerHTML += '<div class="form-group">';
+    console.log(header + ' ' + obj);
+    let html = '';
+    html += '<form>';
+    html += '<div class="form-group">';
     for (let field in data) {
         let id = header + '-' + field;
-        obj.innerHTML += '<label for=' + id + '>' + field + '</label>';
-        obj.innerHTML += '<input type="text" class="form-control" id=' + id + '>';
+        html += '<label for=' + id + '>' + field + '</label>';
+        html += '<input type="text" class="form-control" id=' + id + ' value=' + data[field] + '>';
     }
-    obj.innerHTML += '</div>';
-    obj.innerHTML += '<button type="submit" class="btn btn-primary">Submit</button>';
+    html += '</div>';
+    html += '<button type="submit" class="btn btn-primary">Submit</button><br/>';
+    html += '</form>';
+    obj.innerHTML += html;
 }
 
 

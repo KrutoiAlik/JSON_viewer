@@ -1,3 +1,5 @@
+"use strict";
+
 let ourData = {
     "version": 1,
     "databases": [{
@@ -216,28 +218,66 @@ let ourData = {
     }]
 
 };
+let data = JSON.parse(JSON.stringify(ourData));
 console.log(ourData);
-readJSON(JSON.parse(JSON.stringify(ourData)));
 document.addEventListener('DOMContentLoaded', function () {
-    setHeaders(JSON.parse(JSON.stringify(ourData)));
+    setHeaders(data);
+    readJSON(data);
 });
 
 function readJSON(data) {
 
-    for (obj in data) {
+    for (let obj in data) {
+        let size = Object.keys(data[obj]).length;
+        let obj_tab = document.getElementById(obj + "-profile");
+        console.log(obj + " " + data[obj]);
+        if (size !== 1) {
+            for (let field in data[obj]) {
 
+            }
+        }
     }
 }
 
 function setHeaders(data) {
-    let logo = document.getElementById('nav-tab')
-    for (header in data) {
+    let logo = document.getElementById('nav-tab');
+    for (let header in data) {
         logo.innerHTML += '<li class="nav-item">' +
             '<a class="nav-link" id="' + header + '-tab" data-toggle="tab" href="#' + header + '-profile" role="tab" aria-controls="nav-home" aria-selected="true">' + header[0].toUpperCase() + header.substring(1) + '</a></li>'
     }
 }
 
-$('#pills-tab a').on('click', function (e) {
-    e.preventDefault();
-    $(this).tab('show active')
-});
+function createTable(header, data) {
+    let obj = document.getElementById(header + '-jumbotron');
+
+    obj.innerHTML += '<thead><tr>';
+    for (let element in data) {
+        obj.innerHTML += '<th scope="col">' + element + '</th>';
+    }
+    obj.innerHTML += '</tr></thead>';
+
+    obj.innerHTML += '<tbody><tr>';
+    for (let element in data) {
+        if (element === 'config') {
+            obj.innerHTML += '<td scope="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#config-model">Config</button></td>';
+            continue;
+        }
+        obj.innerHTML += '<td scope="col">' + data[element] + '</td>';
+    }
+    obj.innerHTML += '</tr></tbody>';
+}
+
+function createForm(header, data) {
+    let obj = document.getElementById(header + '-container');
+
+    obj.innerHTML += '<div class="form-group">';
+    for (let field in data) {
+        let id = header + '-' + field;
+        obj.innerHTML += '<label for=' + id + '>' + field + '</label>';
+        obj.innerHTML += '<input type="text" class="form-control" id=' + id + '>';
+    }
+    obj.innerHTML += '</div>';
+    obj.innerHTML += '<button type="submit" class="btn btn-primary">Submit</button>';
+}
+
+

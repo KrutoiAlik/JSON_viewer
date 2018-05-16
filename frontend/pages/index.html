@@ -94,15 +94,7 @@
     <div class="tab-pane fade show active" id="version-profile" role="tabpanel" aria-labelledby="pills-home-tab">
         <br/>
         <div class="jumbotron border">
-            <div class="container" id="version-profile-container" style="width: 70%">
-                <form>
-                    <div class="form-group">
-                        <label style="font-style: italic;" for="version-profile-version">Version</label>
-                        <input type="number" name="Version" class="form-control" id="version-profile-version">
-                    </div>
-                    <button type="button" class="btn btn-primary">Edit</button>
-                </form>
-            </div>
+            <div class="container" id="version-profile-container" style="width: 70%"></div>
         </div>
     </div>
     <div class="tab-pane fade" id="databases-profile" role="tabpanel"
@@ -110,52 +102,16 @@
         <br/>
         <div class="jumbotron" id="databases-profile-jumbotron">
             <h1 class="display-4" id="databases-h4">Databases</h1><br/>
-            <table class="table table-bordered" style="width: fit-content" id="database-profile-database">
-                <thead>
-                <tr>
-                    <th scope="col">Mid</th>
-                    <th scope="col">Host</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Version</th>
-                    <th scope="col">Config</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Text</td>
-                    <td>Text</td>
-                    <td>Text</td>
-                    <td>Text</td>
-                    <td>
-                        <button type="button" class="btn btn-primary"
-                                data-toggle="modal"
-                                data-target="#config-model">
-                            Config
-                        </button>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
         </div>
     </div>
     <div class="tab-pane fade" id="autorization-profile" role="tabpanel"
          aria-labelledby="pills-home-tab">
-        <div class="col-sm-4" style="margin: 0 auto;">
+        <div class="col-sm-4" style="margin: 0 auto; flex-grow: 1">
             <br/>
             <div class="jumbotron" style="width: 60%">
                 <h2 class="display-4" id="autorization-h4" style="margin: 0 auto; alignment: top">Authorization</h2>
                 <br/>
-                <div class="container" id="autorization-profile-container">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputMid">Email address</label>
-                            <input type="text" class="form-control" id="exampleInputMid" placeholder="Enter mid">
-                            <label for="form-host">Password</label>
-                            <input type="url" class="form-control" id="form-host" placeholder="Enter host">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
+                <div class="container" id="autorization-profile-container"></div>
             </div>
         </div>
     </div>
@@ -163,110 +119,13 @@
          aria-labelledby="pills-home-tab">
         <br/>
         <div class="jumbotron">
-            <div class="container" id="transaction-profile-container">
-                <br/>
+            <div class="container" id="transaction-profile-container"><br/>
                 <h1 class="display-4" id="transaction-h1">Transactions</h1><br/>
-                <table class="table">
-                    <tr>
-                        <td>Mid: <input class="form-control input-sm" type="text"/></td>
-                        <td>Host: <input class="form-control input-sm" type="url"/></td>
-                    </tr>
-                </table>
-                <h2 class="display-4">
-                    <small>Databases</small>
-                </h2>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Mid</th>
-                        <th>Host</th>
-                        <th>Type</th>
-                        <th>Version</th>
-                        <th>Config</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="url"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="number"/>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary"
-                                    data-toggle="modal"
-                                    data-target="#config-model">
-                                Config
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="url"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="number"/>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary"
-                                    data-toggle="modal"
-                                    data-target="#config-model">
-                                Config
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="url"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="number"/>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary"
-                                    data-toggle="modal"
-                                    data-target="#config-model">
-                                Config
-                            </button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <h5>Service</h5>
-                <table class="table">
-                    <tr>
-                        <td>X Report: <input class="form-control input-sm" type="number"/></td>
-                        <td>Open day: <input class="form-control input-sm" type="number"/></td>
-                        <td>Close day: <input class="form-control input-sm" type="number"/></td>
-                        <td>Sum: <input class="form-control input-sm" type="number"/></td>
-                    </tr>
-                </table>
-                <h5>Config</h5>
-                <table class="table">
-                    <tr>
-                        <td>Check header: <input class="form-control input-sm" type="text"/></td>
-                        <td>Check footer: <input class="form-control input-sm" type="text"/></td>
-                    </tr>
-                </table>
+                <div class="container" id="databases-transaction-profile-jumbotron">
+                    <h2 class="display-4">
+                        <small>Databases</small>
+                    </h2>
+                </div>
             </div>
         </div>
     </div>
@@ -299,77 +158,9 @@
             <div class="container" id="transport-profile-container">
                 <h1 class="display-4" id="transport-h4">Transport</h1><br/>
                 <br/>
-                <table class="table">
-                    <tr>
-                        <td>Mid: <input class="form-control input-sm" type="text"/></td>
-                        <td>Host: <input class="form-control input-sm" type="url"/></td>
-                    </tr>
-                </table>
-                <h5>Databases</h5>
-                <table class="table">
-                    <thead>
-                    <tr style="float: top">
-                        <th>Mid</th>
-                        <th>Base</th>
-                        <th>User</th>
-                        <th>Password</th>
-                        <th>No create</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="url"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="password"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="number"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="url"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="password"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="number"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="url"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="text"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="password"/>
-                        </td>
-                        <td>
-                            <input class="form-control input-sm" type="number"/>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="container" id="databases-transport-profile-jumbotron">
+                    <h5>Databases</h5>
+                </div>
                 <h5>Config</h5>
                 <table class="table">
                     <table class="table">
@@ -391,13 +182,6 @@
         <div class="jumbotron">
             <div class="container" id="event-profile-container">
                 <h2 class="display-4">Event</h2>
-                <table class="table">
-                    <tr>
-                        <td>Mid: <input class="form-control input-sm" type="text"/></td>
-                        <td>Host: <input class="form-control input-sm" type="url"/></td>
-                    </tr>
-                </table>
-                <br/>
             </div>
         </div>
     </div>
@@ -407,13 +191,6 @@
         <div class="jumbotron">
             <div class="container" id="monitor-profile-container">
                 <h2 class="display-4">Monitor</h2><br/>
-                <div class="input-group input-group-sm">
-                    <table class="table">
-                        <tr>
-                            <td>Host: <input class="form-control input-sm" type="url"/></td>
-                        </tr>
-                    </table>
-                </div>
             </div>
         </div>
     </div>
@@ -423,13 +200,6 @@
         <div class="jumbotron">
             <div class="container" id="tariff-profile-container">
                 <h2 class="display-4">Tariff</h2><br/>
-                <div class="input-group input-group-sm">
-                    <table class="table">
-                        <tr>
-                            <td>Host: <input class="form-control input-sm" type="url"/></td>
-                        </tr>
-                    </table>
-                </div>
             </div>
         </div>
     </div>
@@ -439,20 +209,13 @@
         <div class="jumbotron">
             <div class="container" id="address-profile-container">
                 <h2 class="display-4">Address</h2><br/>
-                <div class="input-group input-group-sm">
-                    <table class="table">
-                        <tr>
-                            <td>Host: <input class="form-control input-sm" type="url"/></td>
-                        </tr>
-                    </table>
-                </div>
             </div>
         </div>
     </div>
     <div class="tab-pane fade" id="terminals-profile" role="tabpanel"
          aria-labelledby="pills-home-tab">
         <br/>
-        <div class="jumbotron" id="terminals-profile-jumbotron">
+        <div class="jumbotron" id="terminals-profile-container">
             <h2 class="display-4">Terminals</h2>
             <table class="table">
                 <tr>
@@ -582,7 +345,7 @@
                                                    width: 50%;
                                                    margin: 0px auto;
                                                    float: none;">
-                    <div class="input-group input-group-btn">
+                    <div class="input-group input-group-btn" id="config-form">
                         <tbody>
                         <tr>
                             <td><p>User<input

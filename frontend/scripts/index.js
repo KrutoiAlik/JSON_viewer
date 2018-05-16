@@ -8,8 +8,8 @@ let ourData = {
         "type": "test",
         "version": "10",
         "config": {
-            "user": "test",
-            "password": "****",
+            "user": "test1",
+            "password": "pas22s",
             "charset": "UTF8",
             "timeout": 60
         }
@@ -19,8 +19,8 @@ let ourData = {
         "type": "test",
         "version": "2018",
         "config": {
-            "user": "test",
-            "password": "****",
+            "user": "test2",
+            "password": "pass",
             "charset": "UTF8",
             "timeout": 60
         }
@@ -36,7 +36,7 @@ let ourData = {
         "databases": [{
             "mid": "test",
             "base": "test",
-            "password": "***"
+            "password": "pass"
         }],
         "service": {
             "xreport": 155,
@@ -68,13 +68,13 @@ let ourData = {
             "mid": "test",
             "base": "test",
             "user": "test",
-            "password": "***"
+            "password": "pass"
         },
             {
                 "mid": "test",
                 "base": "test",
                 "user": "test",
-                "password": "****",
+                "password": "pass",
                 "nocreate": 1
             }
         ],
@@ -82,7 +82,7 @@ let ourData = {
             "ftp": {
                 "host": "ftp.test.ru",
                 "login": "test",
-                "password": "*****",
+                "password": "pass",
                 "path": "/test/"
             }
         }
@@ -123,7 +123,7 @@ let ourData = {
                 "databases": [{
                     "mid": "test",
                     "base": "test",
-                    "password": "****"
+                    "password": "pass"
                 }],
                 "config": {
                     "device_default": ""
@@ -163,7 +163,7 @@ let ourData = {
                 "databases": [{
                     "mid": "test",
                     "base": "test",
-                    "password": "*****"
+                    "password": "pass"
                 }],
                 "config": {}
             },
@@ -189,7 +189,7 @@ let ourData = {
             "databases": [{
                 "mid": "test",
                 "base": "test",
-                "password": "*****"
+                "password": "pass"
             }],
             "service": [10, 11, 12],
             "config": {}
@@ -200,7 +200,7 @@ let ourData = {
                 "mid": "test",
                 "base": "test",
                 "user": "test",
-                "password": "*******"
+                "password": "pass"
             }],
             "service": [1, 2, 3, 4, 5, 6, 7],
             "config": {}
@@ -211,7 +211,7 @@ let ourData = {
                 "mid": "test",
                 "base": "test",
                 "user": "test",
-                "password": "********"
+                "password": "pass"
             }],
             "service": [500]
         }]
@@ -228,12 +228,10 @@ document.addEventListener('DOMContentLoaded', function () {
 function readJSON(data) {
 
     for (let obj in data) {
-        let size = Object.keys(data[obj]).length;
-        let obj_tab = document.getElementById(obj + "-profile");
-        if (obj === 'databases' || obj === 'terminals'){
-            createTable(obj + '-profile', data[obj]);
+        if (obj === 'databases') {
+            createTable(obj, data[obj]);
         } else {
-            createForm(obj + '-profile', data[obj]);
+            createForm(obj, data[obj]);
         }
     }
 }
@@ -246,42 +244,86 @@ function setHeaders(data) {
     }
 }
 
+function createConfig(user, password, charset, timeout) {
+    let config = document.getElementById('config-form');
+    config.innerHTML = '<tbody>' +
+        '<tr>' +
+        '<td><p>User<input class="form-control input-sm" type="text" value="' + user + '"/></p></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td><p>Password<input class="form-control input-sm" type="password" value="' + password + '"/></p></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td><p>Charset<input class="form-control input-sm" type="text" value="' + charset + '"/></p></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td><p>Timeout<input class="form-control input-sm" type="number" value="' + timeout + '"/></p></td>' +
+        '</tr>';
+}
+
 function createTable(header, data) {
-    let head = header + "-jumbotron";
+    let head = header + '-profile-jumbotron';
+    console.log(head);
     let obj = document.getElementById(head);
-
-    obj.innerHTML += '<table class="table"><thead><tr>';
-    for (let element in data) {
-        obj.innerHTML += '<th scope="col">' + element + '</th>';
+    console.log(obj);
+    let html = '<table class="table table-bordered" style="width: fit-content" id="database-profile-database"><thead><tr>';
+    for (let o in data[0]) {
+        html += '<th scope="col">' + o + '</th>';
     }
-    obj.innerHTML += '</tr></thead>';
+    html += '</tr></thead>';
 
-    obj.innerHTML += '<tbody><tr>';
+    html += '<tbody><tr>';
     for (let element in data) {
-        if (element === 'config') {
-            obj.innerHTML += '<td scope="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#config-model">Config</button></td>';
-            continue;
+        for (let o in data[element]) {
+            if (o === 'config') {
+                html += addConfigButton(data[element][o]);
+                continue;
+            }
+            html += '<td scope="col">' + data[element][o] + '</td>';
         }
-        obj.innerHTML += '<td scope="col">' + data[element] + '</td>';
+        html += '</tr>';
     }
-    obj.innerHTML += '</tr></tbody></table>';
+    html += '</tbody></table>';
+    console.log(obj.innerHTML);
+    obj.innerHTML += html;
 }
 
 function createForm(header, data) {
-    let obj = document.getElementById(header + '-container');
-    console.log(header + ' ' + obj);
-    let html = '';
-    html += '<form>';
-    html += '<div class="form-group">';
-    for (let field in data) {
-        let id = header + '-' + field;
-        html += '<label for=' + id + '>' + field + '</label>';
-        html += '<input type="text" class="form-control" id=' + id + ' value=' + data[field] + '>';
+    let obj = document.getElementById(header + '-profile-container');
+    let html = '<form><div class="form-group">';
+    if (Object.keys(data).length > 0) {
+        for (let field in data) {
+            if (field === 'config') {
+                html += '<br/>' + addConfigButton(data[field]);
+            } else if (field === 'databases') {
+                createTable(field + '-' + header, data[field]);
+            } else if (Object.keys(data[field]).length > 1) {
+                createForm(field + '-field', data);
+            } else {
+                let id = header + '-' + field;
+                html += '<label for=' + id + '>' + field + '</label>';
+                html += '<input type="text" class="form-control" id=' + id + ' value=' + data[field] + '>';
+            }
+        }
+    } else {
+        html += '<label for=' + header + '>' + header + '</label>';
+        html += '<input type="number" class="form-control" id=' + header + ' value=' + data + '>';
     }
-    html += '</div>';
-    html += '<button type="submit" class="btn btn-primary">Submit</button><br/>';
-    html += '</form>';
+    html += '</div><button type="button" class="btn btn-primary">Edit</button><br/></form>';
     obj.innerHTML += html;
+}
+
+function addConfigButton(data) {
+    let vars =
+        "\'" + data.user + "\', " +
+        "\'" + data.password + "\', " +
+        "\'" + data.charset + "\', " +
+        "\'" + data.timeout + "\'";
+    return '<td scope="col"><button ' +
+        'type="button" class="btn btn-primary" ' +
+        'data-toggle="modal" data-target="#config-model" ' +
+        'onclick="createConfig(' + vars + ');">Config</button></td>';
+
 }
 
 

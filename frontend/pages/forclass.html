@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="../scripts/objects.js"></script>
+<script>
+    function createConfig(user, password, charset, timeout) {
+        let config = document.getElementById('config-form');
+        config.innerHTML = '<tbody>' +
+            '<tr>' +
+            '<td><p>User<input class="form-control input-sm" type="text" value=' + user + '/></p></td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td><p>Password<input class="form-control input-sm" type="password" value=' + password + '/></p></td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td><p>Charset<input class="form-control input-sm" type="text" value=' + charset + '/></p></td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td><p>Timeout<input class="form-control input-sm" type="number" value=' + timeout + '/></p></td>' +
+            '</tr>';
+    }
+</script>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#config-model" onclick="createConfig('user', 'pass', 'UTF-8', '10');">Config</button>;
+<div class="modal fade" id="config-model" tabindex="-1"
+     role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Configuration</h4>
+                <button type="button" class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body row">
+                <form role="form" class="custom-centered"
+                      style="border-radius: 5px;
+                                                   width: 50%;
+                                                   margin: 0px auto;
+                                                   float: none;">
+                    <div class="input-group input-group-btn" id="config-form">
+                        <tbody>
+                        <tr>
+                            <td><p>User<input
+                                    class="form-control input-sm"
+                                    type="text"/></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Password<input
+                                    class="form-control input-sm"
+                                    type="password"/></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Charset<input
+                                    class="form-control input-sm"
+                                    type="text"/></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Timeout<input
+                                    class="form-control input-sm"
+                                    type="number"/>
+                            </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">Close
+                </button>
+                <button type="button" class="btn btn-primary">Save
+                    changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
